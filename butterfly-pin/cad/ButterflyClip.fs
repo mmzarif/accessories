@@ -95,7 +95,7 @@ export const butterflyClip = defineFeature(function(context is Context, id is Id
             isInteger(definition.magCount, MAG_COUNT_BOUNDS);
 
             annotation { "Name" : "Pocket clearance (per side)" }
-            isLength(definition.magClear, CLEARANCE_BOUNDS);
+            isLength(definition.magClear, MAG_CLEARANCE_BOUNDS);
 
             annotation { "Name" : "Cap thickness over magnet" }
             isLength(definition.magCap, CAP_BOUNDS);
@@ -122,7 +122,7 @@ export const butterflyClip = defineFeature(function(context is Context, id is Id
             isLength(definition.wall, WALL_BOUNDS);
 
             annotation { "Name" : "Running clearance (pins, slots)" }
-            isLength(definition.fitClear, CLEARANCE_BOUNDS);
+            isLength(definition.fitClear, FIT_CLEARANCE_BOUNDS);
 
             annotation { "Name" : "Add hair-clip mounting slots" }
             definition.clipSlots is boolean;
@@ -209,29 +209,6 @@ export const butterflyClip = defineFeature(function(context is Context, id is Id
             }
             xCursor = xCursor + width + definition.layoutGap;
         }
-    },
-    // ───────── defaults ─────────
-    {
-        part : ClipPart.ALL,
-        servo : ServoSize.SG90,
-        customServo : false,
-        servoL : 23 * millimeter,
-        servoW : 12.2 * millimeter,
-        servoH : 22.5 * millimeter,
-        magD : 6 * millimeter,
-        magT : 3 * millimeter,
-        magCount : 4,
-        magClear : 0.15 * millimeter,
-        magCap : 0.6 * millimeter,
-        wingSpan : 70 * millimeter,
-        flapAngle : 34 * degree,
-        rockerLen : 18 * millimeter,
-        pinD : 1.75 * millimeter,     // a snipped length of 1.75 mm filament
-        wall : 1.6 * millimeter,
-        fitClear : 0.25 * millimeter,
-        clipSlots : true,
-        clipW : 10 * millimeter,
-        layoutGap : 6 * millimeter
     });
 
 // ───────────────────────── bounds ─────────────────────────
@@ -240,7 +217,8 @@ const SERVO_BOUNDS = { (millimeter) : [4, 23, 60] } as LengthBoundSpec;
 const MAGNET_D_BOUNDS = { (millimeter) : [2, 6, 20] } as LengthBoundSpec;
 const MAGNET_T_BOUNDS = { (millimeter) : [0.5, 3, 10] } as LengthBoundSpec;
 const MAG_COUNT_BOUNDS = { (unitless) : [2, 4, 8] } as IntegerBoundSpec;
-const CLEARANCE_BOUNDS = { (millimeter) : [0, 0.2, 1.5] } as LengthBoundSpec;
+const MAG_CLEARANCE_BOUNDS = { (millimeter) : [0, 0.15, 1.5] } as LengthBoundSpec;
+const FIT_CLEARANCE_BOUNDS = { (millimeter) : [0, 0.25, 1.5] } as LengthBoundSpec;
 const CAP_BOUNDS = { (millimeter) : [0, 0.6, 4] } as LengthBoundSpec;
 const WINGSPAN_BOUNDS = { (millimeter) : [20, 70, 250] } as LengthBoundSpec;
 const FLAP_BOUNDS = { (degree) : [5, 34, 80] } as AngleBoundSpec;
