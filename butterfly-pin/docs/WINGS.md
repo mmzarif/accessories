@@ -9,6 +9,12 @@ In the reference build the wings are thin white filigree: an outer outline plus
 interior vein ribs, with open space between. Light passes through, they weigh
 almost nothing, and they read as delicate from a distance.
 
+`stl/wings.stl` is a procedurally-traced starting point built from a blue-morpho
+reference photo (`cad/generate_wings.py`, needs `numpy`/`shapely`/`trimesh`) —
+sharp forewing apex, notch, scalloped hindwing, 6+4 veins, root tab sized to
+`wing_mount.stl`'s bond face. It's a print-and-check placeholder, not a
+replacement for tracing your own in Onshape per the steps below.
+
 ## Drawing them in Onshape
 
 1. New sketch on the **Front** plane.

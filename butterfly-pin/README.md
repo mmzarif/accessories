@@ -17,6 +17,7 @@ The original build's four steps, from the demo video:
 |---|---|
 | `firmware/butterfly_clip.ino` | ESP32-C3 firmware — 5 flap modes, web UI, battery cutoff, deep sleep |
 | `cad/ButterflyClip.fs` | Onshape FeatureScript — parametric chassis, magnetic hinge, rockers, tray |
+| `cad/generate_wings.py` | Script that traces a wing silhouette + veins and exports `stl/wings.stl` |
 | `docs/WIRING.md` | Wiring, power gating, and the failure modes that matter |
 | `docs/WINGS.md` | How to draw and print the filigree wings |
 | `docs/CALIBRATION.md` | Tuning the servo endpoints so nothing strips a gear |
